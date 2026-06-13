@@ -2,7 +2,7 @@
 
 A reusable WordPress foundation: the **Kanjava Base** theme (Bulma 1.0 + SCSS + Font Awesome, built with Vite)
 and the **Kanjava Core** plugin (custom post types, taxonomies, shortcodes, settings, REST API).
-Designed to spin up churches, nonprofits, businesses, and music/artist sites from a shared base
+Designed to spin up churches, nonprofits, small businesses, and music/artist sites from a shared base
 plus per-vertical starter packs.
 
 ## Repository layout
