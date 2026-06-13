@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+wordpress/themes/kanjava-base/dist/
+*.log
+
+# WordPress core (only theme + plugin are tracked)
+wordpress/core/
+wp-content/uploads/
+
+# Env / local
+.env
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Composer / phpcs caches
+.phpcs-cache
+.phpunit.result.cache
