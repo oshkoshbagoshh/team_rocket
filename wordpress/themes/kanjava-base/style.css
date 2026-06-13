@@ -1,0 +1,21 @@
+/*
+Theme Name: Kanjava Base
+Theme URI: https://github.com/oshkoshbagoshh/team_rocket
+Author: Team Rocket
+Author URI: https://github.com/oshkoshbagoshh
+Description: Reusable WordPress foundation theme — Bulma 1.0 + SCSS + Font Awesome, built with Vite. Mobile responsive, themed with the Kanjava palette.
+Version: 0.1.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kanjava-base
+*/
+
+/*
+ * Real styles are compiled from src/scss/ by Vite and loaded from dist/.
+ * This file exists for the WordPress theme header only — do not add styles here.
+ */
+
+

@@ -18,6 +18,8 @@ wp-content/uploads/
 .idea/
 .vscode/
 
-# Composer / phpcs caches
+# Composer / phpcs / phpunit caches
 .phpcs-cache
 .phpunit.result.cache
+.phpunit.cache/
+wordpress/themes/kanjava-base/tests/tmp/

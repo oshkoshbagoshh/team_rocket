@@ -1,0 +1,19 @@
+// Kanjava brand palette
+// Single source of truth for theme colors. Consumed by Bulma's theme config
+// (main.scss) and re-exported as CSS custom properties (_custom.scss).
+
+$midnight-violet: hsl(283, 31%, 19%); // #36213e
+$vintage-grape:   hsl(258, 22%, 36%); // #554971
+$slate-grey:      hsl(213, 18%, 47%); // #63768d
+$frosted-blue:    hsl(189, 43%, 68%); // #8ac6d0
+$frosted-blue-2:  hsl(190, 100%, 86%); // #b8f3ff
+
+// Brand gradient (top-left -> bottom-right through the full ramp)
+$brand-gradient: linear-gradient(
+  135deg,
+  $midnight-violet,
+  $vintage-grape,
+  $slate-grey,
+  $frosted-blue,
+  $frosted-blue-2
+);

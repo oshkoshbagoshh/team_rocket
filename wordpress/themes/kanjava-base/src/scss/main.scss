@@ -1,0 +1,16 @@
+// Kanjava Base — main stylesheet entry
+// Loaded via src/js/main.js so Vite processes it through the build pipeline.
+
+@use 'variables' as brand;
+
+// Bulma 1.0, themed with the Kanjava palette. Initial Sass variables passed
+// here flow through to Bulma's derived CSS custom properties (--bulma-*).
+@use 'bulma/sass' with (
+  $primary: brand.$midnight-violet,
+  $link: brand.$vintage-grape,
+  $info: brand.$frosted-blue,
+  $family-primary: '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+);
+
+// Project styles + CSS custom properties + responsive tweaks.
+@use 'custom';

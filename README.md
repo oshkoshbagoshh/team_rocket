@@ -1,6 +1,6 @@
 # Kanjava Platform
 
-A reusable WordPress foundation: the **Kanjava Base** theme (Bootstrap 5 + SCSS, built with Vite)
+A reusable WordPress foundation: the **Kanjava Base** theme (Bulma 1.0 + SCSS + Font Awesome, built with Vite)
 and the **Kanjava Core** plugin (custom post types, taxonomies, shortcodes, settings, REST API).
 Designed to spin up churches, nonprofits, businesses, and music/artist sites from a shared base
 plus per-vertical starter packs.
@@ -10,7 +10,7 @@ plus per-vertical starter packs.
 ```
 kanjava-platform/                 (this repo)
 ├── wordpress/
-│   ├── themes/kanjava-base/      Bootstrap 5 theme, Vite build
+│   ├── themes/kanjava-base/      Bulma 1.0 theme, Vite build
 │   └── plugins/kanjava-core/     Content engine: CPTs, taxonomies, shortcodes, REST
 ├── docs/                         Install / developer / client guides
 ├── AGENTS.md                     Conventions for AI agents and contributors

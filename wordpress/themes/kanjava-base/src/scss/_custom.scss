@@ -1,0 +1,73 @@
+// Kanjava Base — project styles
+// Brand palette as CSS custom properties + a few responsive touches on top of
+// Bulma. Bulma is mobile-first, so most responsiveness comes for free; this
+// file only adds brand-specific pieces.
+
+@use 'variables' as brand;
+
+:root {
+  --midnight-violet: #{brand.$midnight-violet};
+  --vintage-grape: #{brand.$vintage-grape};
+  --slate-grey: #{brand.$slate-grey};
+  --frosted-blue: #{brand.$frosted-blue};
+  --frosted-blue-2: #{brand.$frosted-blue-2};
+  --brand-gradient: #{brand.$brand-gradient};
+}
+
+// Gradient hero used on the front page.
+.hero.is-kanjava {
+  background: var(--brand-gradient);
+  color: #fff;
+
+  .title,
+  .subtitle {
+    color: #fff;
+  }
+}
+
+// Utility: paint any element with the full brand ramp.
+.has-background-kanjava-gradient {
+  background: var(--brand-gradient) !important;
+}
+
+// Keep the footer on-brand and pushed to the bottom on short pages.
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-content {
+  flex: 1 0 auto;
+}
+
+.footer.is-kanjava {
+  background-color: var(--midnight-violet);
+  color: var(--frosted-blue-2);
+
+  a {
+    color: var(--frosted-blue);
+
+    &:hover {
+      color: var(--frosted-blue-2);
+    }
+  }
+}
+
+// Cards lift slightly on hover — disabled for users who prefer reduced motion.
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+// Tighten the hero heading on small screens (Bulma's mobile breakpoint).
+@media screen and (max-width: 768px) {
+  .hero.is-kanjava .title {
+    font-size: 2rem;
+  }
+}

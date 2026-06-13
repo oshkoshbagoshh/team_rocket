@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset name="Kanjava Base">
+	<description>WordPress Coding Standards for the Kanjava Base theme.</description>
+
+	<!-- Scan the theme root, skip build output, deps, and tests. -->
+	<file>.</file>
+	<exclude-pattern>*/dist/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<!-- Only sniff PHP. -->
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<!-- Full WordPress ruleset (Core + Extra + Docs). -->
+	<rule ref="WordPress"/>
+
+	<!-- Theme conventions. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="kanjava-base"/>
+			</property>
+		</properties>
+	</rule>
+
+	<config name="minimum_supported_wp_version" value="6.4"/>
+
+	<!-- PHP 8.1+ compatibility. -->
+	<config name="testVersion" value="8.1-"/>
+	<rule ref="PHPCompatibilityWP"/>
+</ruleset>
