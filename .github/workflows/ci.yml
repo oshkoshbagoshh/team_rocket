@@ -10,6 +10,11 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+# Run JS-based actions on Node 24 (the runner default from 2026-06-16),
+# ahead of the Node 20 action-runtime deprecation.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 defaults:
   run:
     working-directory: wordpress/themes/kanjava-base
@@ -53,7 +58,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
           cache-dependency-path: wordpress/themes/kanjava-base/package-lock.json
 
