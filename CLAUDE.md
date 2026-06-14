@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Early-stage. The **Kanjava Base** theme (`wordpress/themes/kanjava-base/`) is wired up with its
 front-end build (Bulma + SCSS + Font Awesome via Vite) and a working theme skeleton. The
-**Kanjava Core** plugin and the Docker stack are still empty scaffolding — when the README
-references something that isn't on disk yet (`docker-compose.yml`, `AGENTS.md`, the plugin's PHP),
-it hasn't been created. Verify before assuming.
+Docker stack (`docker-compose.yml`) works — `docker compose up -d` boots WordPress + MariaDB +
+phpMyAdmin + MailHog with the theme/plugin bind-mounted. The **Kanjava Core** plugin is still empty
+scaffolding, and `AGENTS.md` (referenced by the README) doesn't exist yet — verify before assuming.
 
 ## What this is
 
@@ -79,11 +79,18 @@ tested. "Passable" = `composer lint` reports 0 errors and `composer test` is ful
 tests (`WP_UnitTestCase`), the `theme-unit-test-data.xml` import, and Theme Check are **deferred**
 until the Docker stack exists (they need a running WordPress).
 
-Local WordPress stack (depends on `docker-compose.yml`, not yet committed — confirm first):
+Local WordPress stack:
 
 ```bash
-docker compose up -d                              # local LAMP stack
+docker compose up -d            # builds the WP image (msmtp->MailHog) + boots the stack
+docker compose down             # stop; add -v to also wipe the DB + WP core volumes
 ```
+
+The `wordpress` service is a small custom image (`docker/wordpress/Dockerfile`) — stock WordPress
+plus `msmtp` so PHP `mail()` is relayed to MailHog. WP core lives in the `wp_core` named volume
+(not committed); only the theme and plugin are bind-mounted, so host edits are live. Running
+`npm run dev` on the host pairs with the container: PHP reads the bind-mounted `dist/hot` and emits
+`localhost:5173` asset URLs the host browser loads directly.
 
 | Service    | URL                   | Notes                                   |
 |------------|-----------------------|-----------------------------------------|
